@@ -13,7 +13,7 @@ const Work = () => {
     const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 });
 
     useEffect(() => {
-        const query = '*[_type == "works"]';
+        const query = '*[_type == "works"] | order(title desc)';
 
         client.fetch(query).then((data) => {
             setWorks(data);
@@ -40,8 +40,9 @@ const Work = () => {
         <>
             <h2 className="head-text"><span>Projects</span> I've Worked On</h2>
 
-            <div className="app__work-filter">
-                {['UI/UX', 'Web App', 'Mobile App', 'React JS', 'All'].map((item, index) => (
+            {/* Leaving filters out for now, not enough projects to matter yet */}
+            {/* <div className="app__work-filter">
+                {['Python', 'React.js', 'React Native', 'MERN Stack', 'Redux', 'Typescript', 'Gatsby', 'Workshop', 'All'].map((item, index) => (
                     <div
                         key={index}
                         onClick={() => handleWorkFilter(item)}
@@ -50,7 +51,7 @@ const Work = () => {
                         {item}
                     </div>
                 ))}
-            </div>
+            </div> */}
 
             <motion.div
                 animate={animateCard}
@@ -111,5 +112,5 @@ const Work = () => {
 export default AppWrap(
     MotionWrap(Work, 'app__works'),
     'work',
-    "app__brownbg"
+    "app__primarybg"
 );

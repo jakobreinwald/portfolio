@@ -20,7 +20,7 @@ const Experiences = () => {
 
     return (
         <>
-            <h2 className="head-text">Programming <span>Experiences</span></h2>
+            <h2 className="head-text">Programming <span>Experience</span></h2>
 
             <div className="app__experiences-container">
                 <motion.div className="app__experiences-exp">
@@ -68,5 +68,5 @@ const Experiences = () => {
 export default AppWrap(
     MotionWrap(Experiences, 'app__experiences'),
     'experiences',
-    "app__primarybg",
+    "app__brownbg",
 );
